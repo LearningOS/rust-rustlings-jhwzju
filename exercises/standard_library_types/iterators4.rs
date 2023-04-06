@@ -1,6 +1,8 @@
 // iterators4.rs
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a hint.
 
+// HARD
+
 pub fn factorial(num: u64) -> u64 {
     // Complete this function to return the factorial of num
     // Do not use:
@@ -10,8 +12,14 @@ pub fn factorial(num: u64) -> u64 {
     // - additional variables
     // For an extra challenge, don't use:
     // - recursion
-    
+    // Execute `rustlings hint iterators4` for hints.
+    (1..=num).fold(1, |acc, elem| acc * elem)
 }
+
+    // std::iter::successors(Some(1), |&n| Some(n + 1))
+    //     .take(num as usize)
+    //     .fold(1, |acc, n| acc * n)
+
 
 #[cfg(test)]
 mod tests {
